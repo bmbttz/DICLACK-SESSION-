@@ -21,9 +21,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.listen(PORT, () => {
     console.log(`
-Don't Forget To Give Star Ladybug-MD
+Don't Forgot To Give Star nova-xmd
 
  Server running on http://localhost:` + PORT)
 })
 
 module.exports = app
+    
