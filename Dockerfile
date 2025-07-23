@@ -1,27 +1,29 @@
 FROM node:lts-buster
 
-# Kuwa non-interactive na kusaidia kusafisha cache
+# Prevent apt from prompting
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Install system-level packages
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-      ffmpeg \
-      imagemagick \
-      webp \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+        ffmpeg \
+        imagemagick \
+        libwebp-dev \
+    && apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
+# Set working directory
 WORKDIR /usr/src/app
 
-# Nakili manifest na install dependencies za Node
-COPY package.json package-lock.json* ./
+# Copy package metadata and install dependencies
+COPY package.json ./
 RUN npm install && npm install -g qrcode-terminal pm2
 
-# Nakili source code yote
+# Copy the full app code
 COPY . .
 
-# Port yako ya app
+# Expose the app port (adjust if your app uses a different one)
 EXPOSE 5000
 
-# Amri ya kuanza
+# Start the app using pm2
 CMD ["npm", "start"]
