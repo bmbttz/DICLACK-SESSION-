@@ -1,16 +1,16 @@
 {
   "description": "nova-pair-code",
-  "main": "./index.js",
+  "main": "./bmb.js",
   "type": "commonjs",
   "engines" : { 
     "node" : ">=20.0.0"
     },
     "scripts": {
-      "start": "pm2 start index.js --deep-monitoring --attach --name nova",
-      "stop": "pm2 stop nova",
-     "restart": "pm2 restart nova"
+      "start": "pm2 start bmb.js --deep-monitoring --attach --name bmb",
+      "stop": "pm2 stop gifted",
+     "restart": "pm2 restart gifted"
     },
-  "author": "Nova Xmd",
+  "author": "bmb tech",
   "license": "GPL-3.0 license",
   "dependencies": {
     "@whiskeysockets/baileys": "^6.6.7",

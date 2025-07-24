@@ -1,173 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SPIRITY XMD - WEBSITE</title>
-    <link rel="website icon" type="jpg" href="megalodon.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="" type="image/x-icon">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
     body {
-      background-color: #001f3f;
-      color: white;
+      background-color: black;
       display: flex;
-      justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      overflow: hidden;
-      position: relative;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: white;
     }
 
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #ee82ee);
-      background-size: 500% 500%;
-      animation: glow 15s ease infinite;
-      opacity: 0.3;
-      z-index: 0;
+    {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "url": "https://railway.app",
+            "logo": "https://files.catbox.moe/mi4qng.jpg"
     }
 
-    @keyframes glow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .card {
-      position: relative;
-      z-index: 1;
-      background: rgba(0, 0, 64, 0.9);
-      border-radius: 18px;
-      padding: 2rem;
+    .button-container {
       text-align: center;
-      max-width: 480px;
-      box-shadow: 0 0 25px #0074D9;
-    }
-
-    .card img.profile {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #0074D9;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 1.9rem;
-      margin-bottom: 1rem;
-      color: #00aaff;
-    }
-
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      background: transparent;
-      border: 2px solid #0074D9;
-      border-radius: 8px;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.4s;
-      animation: buttonGlow 4s linear infinite;
-    }
-
-    @keyframes buttonGlow {
-      0% { box-shadow: 0 0 10px #ff0000; border-color: #ff0000; }
-      33% { box-shadow: 0 0 10px #00ff00; border-color: #00ff00; }
-      66% { box-shadow: 0 0 10px #0074D9; border-color: #0074D9; }
-      100% { box-shadow: 0 0 10px #ff0000; border-color: #ff0000; }
-    }
-
-    .btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: scale(1.05);
-    }
-
-    .footer {
-      margin-top: 1.5rem;
-      font-size: 0.85rem;
-      color: #bbb;
-    }
-
-    audio {
-      margin-top: 1rem;
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    #digital-clock {
-      margin-top: 1rem;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      gap: 8px;
-      font-size: 1rem;
-      color: #00ffcc;
     }
 
-    .tz-flag {
-      width: 20px;
-      height: 12px;
-      border-radius: 2px;
-      border: 1px solid #fff;
+    h3 {
+      margin-top: -40px;
+      opacity: 0;
+      animation: fadeIn 3s forwards;
+    }
+
+    .button {
+      width: 140px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0px 15px;
+      background-color: red;
+      border-radius: 10px;
+      border: none;
+      color: white;
+      position: relative;
+      cursor: pointer;
+      font-weight: 900;
+      transition-duration: .2s;
+      background: linear-gradient(0deg, #000, #272727);
+      text-decoration: none;
+    }
+
+  
+    footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #222; /* Darker gray footer background */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    
+  }
+    .button:before, .button:after {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #48ff00, #15ff00, #000000,#000000, #ff0000);
+      background-size: 400%;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      z-index: -1;
+      animation: steam 10s linear infinite;
+    }
+
+    @keyframes steam {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 400% 0;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .button:after {
+      filter: blur(50px);
+    }
+
+    .button span {
+      z-index: 1;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img src="https://files.catbox.moe/zmhz85.jpg" alt="SPIRITY-MD" class="profile" />
+  <div class="button-container">
+    <h3>𝐁.𝐌.𝐁-𝐗𝐌𝐃 SESSION</h3>
+    <div></div>
+    <a href="/qr" class="button" target="_blank"> <span>QR-CODE</span> </a> <br>
+    <a href="/pair" class="button" target="_blank"> <span>PAIRING-CODE</span> </a> <br>
+    <a href="https://github.com/bmb200/B.M.B-XMD-V2/fork" class="button" target="_blank"> <span>FORK B.M.B-XMD-V2</span> </a> <br> </a>
+    <a href="https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z" class="button" target="_blank"> <span>WhatsApp</span> </a> <br>
 
-    <h1>SPIRITY-XMD</h1>
+    <p>HAVE ANY ERROR CLICK ERROR BUTTON</p>
 
-    <button class="btn" onclick="window.open('https://wa.me/22603582906', '_blank')">Dark-DEv</button>
-    <button class="btn" onclick="window.open('https://github.com/DARKMAN226/SPIRITY-XMD/fork', '_blank')">FORK REPOS</button>
-    <button class="btn" onclick="window.open('https://github.com/itxxwasi', '_blank')">𝚆𝙰𝚂𝙸 𝚃𝙴𝙲𝙷</button>
-    <button class="btn" onclick="window.open('/pair')">PARING CODE</button>
-    <button class="btn" onclick="window.open('/qr')">QR CODE</button>
-    <button class="btn" onclick="window.open('https://wa.me/22603582906', '_blank')">Dark-DEv</button>
-    
+    <a href="https://wa.me/255767862457" class="button" target="_blank"> <span>ERROR</span> </a> <br>
 
-    <audio controls autoplay loop>
-      <source src="https://files.catbox.moe/wivkqd.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-
-    <!-- Digital Clock with Tanzania Flag -->
-    <div id="digital-clock">
-      <span id="time"></span>
-      <img src="https://files.catbox.moe/zmhz85.jpg" alt="Opps" class="tz-flag">
-    </div>
-
-    <div class="footer">© 2025 SPIRITY-XMD. All rights reserved.</div>
-  </div>
-
-  <script>
-    function updateTime() {
-      const options = {
-        timeZone: 'America/Port-au-Prince',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-      };
-      const now = new Date().toLocaleTimeString('en-GB', options);
-      document.getElementById('time').textContent = now;
-    }
-
-    setInterval(updateTime, 1000);
-    updateTime();
-  </script>
+    <footer>
+     𝐁.𝐌.𝐁-𝐗𝐌𝐃 &copy; <span id="currentYear"></span>
+    </footer>
+  
 </body>
-  </html>
+</html>
