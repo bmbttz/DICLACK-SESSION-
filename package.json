@@ -1,16 +1,16 @@
 {
-  "description": "gifted-pair-code",
-  "main": "./gifted.js",
+  "description": "nova-pair-code",
+  "main": "./index.js",
   "type": "commonjs",
   "engines" : { 
     "node" : ">=20.0.0"
     },
     "scripts": {
-      "start": "pm2 start gifted.js --deep-monitoring --attach --name gifted",
-      "stop": "pm2 stop gifted",
-     "restart": "pm2 restart gifted"
+      "start": "pm2 start index.js --deep-monitoring --attach --name nova",
+      "stop": "pm2 stop nova",
+     "restart": "pm2 restart nova"
     },
-  "author": "Gifted Tech",
+  "author": "Nova Xmd",
   "license": "GPL-3.0 license",
   "dependencies": {
     "@whiskeysockets/baileys": "^6.6.7",
